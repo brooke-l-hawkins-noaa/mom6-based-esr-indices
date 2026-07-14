@@ -17,8 +17,8 @@ interactive(True)
 # Input variables, change these
 # -----------------------------------------------------------------------------
 # .1) sst time series
-iea_yr = 2026
-fn1 = "./data_gha/SSTspatial/TS_monthly.nc"
+iea_yr = 2025
+fn1 = "./TS_monthly.nc"
 
 
 # .2) SST
@@ -70,8 +70,7 @@ yg2 = np.arange(30, 54, 4)
 clrbr_lbl = "SST Anom (°C)"
 
 # .5) plot directory
-dir_plot_out = "./figures_gha/miniESR/"
-# dir_plot_out = './figures_x13/miniESR'
+dir_plot_out = "./"
 
 # -----------------------------------------------------------------------------
 # END: Input variables, change these
@@ -87,7 +86,7 @@ ds1 = (
 
 # get the years up to iea_yr
 yrs = ds1.time.dt.year
-yr_bgn = yrs[0]
+yr_bgn = 1993
 yr_end = iea_yr
 
 da1 = ds1[var_wnt[0]].sel(time=ds1.time.dt.year.isin(np.arange(yr_bgn, yr_end + 1)))
@@ -229,7 +228,7 @@ for iii in range(num_mon_list):
 
         # create plot output directory
         dir_year = "{}/{}/".format(dir_plot_out, iea_yr)
-        dir_plots = dir_year + "sst_anom/"
+        dir_plots = dir_year
         # check if directory exist, if it doesn't then create
         try:
             os.makedirs(dir_plots)

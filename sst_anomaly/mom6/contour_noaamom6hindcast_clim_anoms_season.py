@@ -18,7 +18,7 @@ interactive(True)
 # -----------------------------------------------------------------------------
 # .1) sst time series
 iea_yr = 2025
-fn1 = "./TS_monthly.nc"
+fn1 = "./mom6_monthly_sst.nc"
 
 
 # .2) SST
@@ -27,7 +27,7 @@ xlm = [-128, -116.8]
 ylm = [32, 48]
 
 # variable
-var_wnt = ["sst"]
+var_wnt = ["tos"]
 
 # dimension
 dim_lbl = ["lat_vec", "lon_vec", "time"]
